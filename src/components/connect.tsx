@@ -115,8 +115,8 @@ export function Connect() {
       </div>
     </div>
 
-    <div>
-      <TonConnectButton/>
-    </div>
+    {/*<div>*/}
+    {/*  <TonConnectButton/>*/}
+    {/*</div>*/}
   </div>
 }
