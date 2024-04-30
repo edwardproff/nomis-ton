@@ -5,6 +5,7 @@ import "./globals.css";
 import {TonConnectUIProvider} from "@tonconnect/ui-react";
 
 const inter = Inter({subsets: ["latin"]});
+import '@twa-dev/sdk'
 
 const manifestUrl = 'https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json'
 

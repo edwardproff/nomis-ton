@@ -74,7 +74,7 @@ export function Score() {
         </div>
 
         <div className={styles.address}>
-          {wallet}
+          {wallet?.substr(0, 15)}...{wallet?.slice(-15)}
         </div>
       </div>
 
