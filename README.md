@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# twa-template
 
-## Getting Started
+> Starter template for a new TWA interacting with the TON blockchain
 
-First, run the development server:
+# Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The project is highly-opinionated, and there are many other alternate routes it could have taken. Some examples:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Supports Ton Connect 2 wallets
+- Uses vite with react (alternative to create-react-app)
+- Uses the `ton` npm package
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Prerequesities
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Node.js v16 (other versions may work, needs more testing)
+- A TON Connect compatible wallet (e.g. [Tonkeeper](https://tonkeeper.com/))
 
-## Learn More
+# What does this repo contain?
 
-To learn more about Next.js, take a look at the following resources:
+- A react-based TWA-ready app, interacting with TON
+- Github actions set to deploy app to github pages
+- A script to connect a telegram bot to the deployed app
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# How to use
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Create a template from this repo with the "Use this template" button
 
-## Deploy on Vercel
+   1. Choose a name for your repo
+   2. `**IMPORTANT!!**` mark "Include all branches", otherwise github pages deployment will not work.
+      ![image](https://user-images.githubusercontent.com/5641469/191731317-14e742fd-accb-47d4-a794-fad01148a377.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Clone this repo and run `yarn`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Create a new bot with [botfather](https://t.me/botfather)
+   1. Type `/newbot`
+   2. Choose a name for your bot, e.g. `My Ton TWA`
+   3. Choose a username for your bot, e.g. `my_ton_twa_482765_bot`
+   4. Take note of the access token, e.g. `5712441624:AAHmiHvwrrju1F3h29rlVOZLRLnv-B8ZZZ`
+   5. Run `yarn configbot` to link your bot to the webapp
+
+# Development
+
+1. Run `npm run dev` and edit the code as needed
+2. On push to the `main` branch, the app will be automatically deployed via github actions.
+
+# Roadmap
+
+- [ ] Jetton transfer support
+
+# License
+
+MIT

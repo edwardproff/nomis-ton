@@ -1,8 +1,5 @@
-'use client'
-
 import {create} from "zustand";
-import {useEffect} from "react";
-import {useTonConnect} from "@/hooks/useTonConnect";
+import {useTonConnect} from "./useTonConnect";
 import {Address} from "ton-core";
 
 export type TokenBalance = {

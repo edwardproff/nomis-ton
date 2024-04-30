@@ -1,13 +1,9 @@
-'use client'
-
-import Image from "next/image";
-import yoda from './yoda.png'
 import styles from './Score.module.scss'
-import useScore from "@/hooks/useScore";
-import {useTonConnect} from "@/hooks/useTonConnect";
-import {Stats} from "@/app/Stats";
+import useScore from "../hooks/useScore";
+import {useTonConnect} from "../hooks/useTonConnect";
+import {Stats} from "./Stats";
 import {useEffect} from "react";
-import {Mint} from "@/app/mint";
+import {Mint} from "./mint";
 
 export function Score() {
 
@@ -23,7 +19,7 @@ export function Score() {
 
   if (isLoading) return <>
     <div className={styles.loading}>
-      <Image src={yoda} alt="" className={styles.yoda}/>
+      <img src="/yoda.png" className={styles.yoda}/>
 
       <div className={styles.title}>
         We are calculating your Score

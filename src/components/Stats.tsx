@@ -1,5 +1,5 @@
 import styles from "./Stats.module.scss";
-import useScore from "@/hooks/useScore";
+import useScore from "../hooks/useScore";
 
 export function Stats() {
 

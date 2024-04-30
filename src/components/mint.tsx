@@ -1,20 +1,22 @@
-'use client'
-
-import {useTonConnect} from "@/hooks/useTonConnect";
+import {useTonConnect} from "../hooks/useTonConnect";
 import {useContract} from "../hooks/useContract";
-import {ScoreData} from "@/contract/NomisScore/tact_NomisScore";
-import {createContentCellFromURL, getSetScoreParentProps} from "@/utils/common-functions";
+import {ScoreData} from "../contracts/tact_NomisScore";
+import {createContentCellFromURL, getSetScoreParentProps} from "../utils/common-functions";
 import {Address, toNano} from "ton-core";
 import styles from './Mint.module.scss'
+import useScore from "../hooks/useScore";
 
 export function Mint() {
   const {wallet, network, sender} = useTonConnect()
   const {contract} = useContract()
+  const {scoreData} = useScore()
 
   const mint = async () => {
 
     if (!wallet) return
     if(!contract) return
+
+    // if(!scoreData?.mintData?.mintedScore) return
 
     const validatorSeed = 'wild kite chest again dad crowd loan mansion hand foot dizzy hair canoe glue antique employ kite next include tank universe blanket charge bench'
     const seqno = await contract.getSeqno();
@@ -25,6 +27,7 @@ export function Mint() {
 
     //test
     const price = 1000000000n
+    // const score = BigInt(scoreData.mintData.mintedScore)
     const score = 40n
     const refAmount = 0n
     const referrer = null

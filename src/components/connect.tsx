@@ -1,7 +1,6 @@
-"use client";
 import styles from './Connect.module.scss'
 import {TonConnectButton} from "@tonconnect/ui-react";
-import {useTonConnect} from "@/hooks/useTonConnect";
+import {useTonConnect} from "../hooks/useTonConnect";
 
 export function Connect() {
 
