@@ -1,0 +1,43 @@
+.header {
+    text-align: center;
+
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .description {
+        color: rgba(0, 0, 0, .4);
+        margin-bottom: 48px;
+    }
+}
+
+.icons {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 48px;
+
+    .card {
+        display: flex;
+        gap: 12px;
+
+        .body {
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .title {
+            font-size: 16px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .description {
+            color: rgba(0, 0, 0, .6)
+        }
+
+    }
+}

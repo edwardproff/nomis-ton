@@ -1,0 +1,21 @@
+.table {
+    margin-bottom: 10px;
+
+    .row {
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+        padding: 16px 0;
+        display: flex;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .label {
+        font-weight: bold;
+        flex-grow: 1;
+    }
+
+    .value {
+        color: rgba(0, 0, 0, .6)
+    }
+}
