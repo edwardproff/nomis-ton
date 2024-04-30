@@ -1,7 +1,7 @@
 import {Address, OpenedContract} from "ton-core";
 import {useTonConnect} from "./useTonConnect";
 import {useAsyncInitialize} from "./useAsyncInitialize";
-import {NomisScore} from "../build/NomisScore/tact_NomisScore";
+import {NomisScore} from "@/build/NomisScore/tact_NomisScore";
 import {useTonClient} from "./useTonClient";
 import {Contract} from "ton-core";
 
