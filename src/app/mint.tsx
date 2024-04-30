@@ -2,7 +2,7 @@
 
 import {useTonConnect} from "@/hooks/useTonConnect";
 import {useContract} from "../hooks/useContract";
-import {ScoreData} from "@/build/NomisScore/tact_NomisScore";
+import {ScoreData} from "@/contract/NomisScore/tact_NomisScore";
 import {createContentCellFromURL, getSetScoreParentProps} from "@/utils/common-functions";
 import {Address, toNano} from "ton-core";
 import styles from './Mint.module.scss'
