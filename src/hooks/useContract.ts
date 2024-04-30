@@ -6,7 +6,7 @@ import {useTonClient} from "./useTonClient";
 import {Contract} from "ton-core";
 
 export function useContract() {
-  const { wallet, sender } = useTonConnect();
+  const { wallet } = useTonConnect();
   const { client } = useTonClient();
 
   const nomisContract = useAsyncInitialize(async () => {

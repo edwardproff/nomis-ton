@@ -74,14 +74,22 @@ export function Score() {
         </div>
       </div>
 
-      {scoreData?.score && <div className={styles.badge}>
-        {Math.round(scoreData.score * 100)}
+      {<div className={styles.badge}>
+        {scoreData?.score ? Math.round(scoreData.score * 100) : 0}
       </div>}
 
     </div>
 
-    <Stats/>
-
-    <Mint/>
+    {scoreData?.mintData ? <>
+      <Stats/>
+      <Mint/>
+    </> : <div className={styles.banner}>
+      <div className={styles.title}>
+        Can’t mint
+      </div>
+      <div className={styles.description}>
+        You have no activity on TON. Please, make at least 2 transactions to get your Score.
+      </div>
+    </div>}
   </div>
 }
