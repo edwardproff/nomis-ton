@@ -14,25 +14,25 @@ export function Connect() {
     <div className={styles.header}>
       <div>
         <svg width="358" height="72" viewBox="0 0 358 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_4544_194)">
+          <g clipPath="url(#clip0_4544_194)">
             <rect x="123" y="4" width="64" height="64" rx="32" fill="url(#paint0_radial_4544_194)"/>
             <path
               d="M171.48 24.3467C171.373 23.2267 170.787 22.1867 169.88 21.4933C168.973 20.8267 167.8 20.56 166.68 20.8C166.173 20.9067 165.64 21.1733 164.6 21.68C163.747 22.1067 163.32 22.32 162.893 22.5067C161.133 23.2 159.213 23.3333 157.373 22.9067C156.92 22.8 156.467 22.64 155.56 22.3467L154.093 21.8667C150.707 20.7467 149.027 20.1867 147.347 20.48C145.747 20.7733 144.307 21.6267 143.32 22.9067C142.253 24.24 141.96 26.0267 141.373 29.52L138.733 45.44C138.547 46.6133 138.44 47.1467 138.493 47.6533C138.6 48.7733 139.187 49.8133 140.093 50.5067C141 51.1733 142.173 51.44 143.267 51.2C143.773 51.0933 144.307 50.8267 145.4 50.2667C146.227 49.8667 146.627 49.6533 147.053 49.4933C148.813 48.8 150.733 48.6667 152.573 49.0933C153.027 49.2 153.48 49.36 154.387 49.6533L155.853 50.1333C158.627 51.04 160.253 51.6 161.693 51.6C162.013 51.6 162.307 51.6 162.627 51.52C164.227 51.2267 165.667 50.3733 166.653 49.0933C167.72 47.76 168.013 46 168.6 42.48L171.24 26.5867C171.427 25.4133 171.533 24.8533 171.48 24.3467Z"
               fill="white"/>
           </g>
-          <rect x="121" y="2" width="68" height="68" rx="34" stroke="white" stroke-width="4"/>
+          <rect x="121" y="2" width="68" height="68" rx="34" stroke="white" strokeWidth="4"/>
           <rect x="169" y="2" width="68" height="68" rx="34" fill="#0098EA"/>
-          <rect x="169" y="2" width="68" height="68" rx="34" stroke="white" stroke-width="4"/>
+          <rect x="169" y="2" width="68" height="68" rx="34" stroke="white" strokeWidth="4"/>
           <path
             d="M213.926 21.8602H192.073C188.055 21.8602 185.508 26.1945 187.529 29.6984L201.016 53.0753C201.897 54.6017 204.102 54.6017 204.982 53.0753L218.472 29.6984C220.491 26.2001 217.944 21.8602 213.929 21.8602H213.926ZM201.006 46.0649L198.068 40.3802L190.981 27.7045C190.513 26.8931 191.091 25.8535 192.07 25.8535H201.003V46.0677L201.006 46.0649ZM215.012 27.7017L207.928 40.383L204.991 46.0649V25.8507H213.923C214.902 25.8507 215.48 26.8904 215.012 27.7017Z"
             fill="white"/>
           <defs>
             <radialGradient id="paint0_radial_4544_194" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
                             gradientTransform="translate(155 4) rotate(90) scale(64)">
-              <stop stop-color="#99EEFF"/>
-              <stop offset="0.526042" stop-color="#BB33FF"/>
-              <stop offset="0.864583" stop-color="#2200CC"/>
-              <stop offset="1" stop-color="#00AACC"/>
+              <stop stopColor="#99EEFF"/>
+              <stop offset="0.526042" stopColor="#BB33FF"/>
+              <stop offset="0.864583" stopColor="#2200CC"/>
+              <stop offset="1" stopColor="#00AACC"/>
             </radialGradient>
             <clipPath id="clip0_4544_194">
               <rect x="123" y="4" width="64" height="64" rx="32" fill="white"/>
@@ -97,10 +97,10 @@ export function Connect() {
             <defs>
               <radialGradient id="paint0_radial_4544_538" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
                               gradientTransform="translate(16) rotate(90) scale(32)">
-                <stop stop-color="#99EEFF"/>
-                <stop offset="0.526042" stop-color="#BB33FF"/>
-                <stop offset="0.864583" stop-color="#2200CC"/>
-                <stop offset="1" stop-color="#00AACC"/>
+                <stop stopColor="#99EEFF"/>
+                <stop offset="0.526042" stopColor="#BB33FF"/>
+                <stop offset="0.864583" stopColor="#2200CC"/>
+                <stop offset="1" stopColor="#00AACC"/>
               </radialGradient>
             </defs>
           </svg>

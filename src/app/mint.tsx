@@ -37,7 +37,7 @@ export function Mint() {
       user: Address.parseRaw(wallet),
       ref_amount: refAmount,
       referrer,
-      content: cellContent,
+      content: cellContent ,
       is_mint: isMint,
     }
 
@@ -48,11 +48,6 @@ export function Mint() {
     });
 
     const itemIndex = await contract.getGetNextIndex();
-
-    // @ts-expect-error
-    BigInt.prototype.toJSON = function () {
-      return this.toString()
-    }
 
     const tx = await contract.send(
       sender,
