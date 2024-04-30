@@ -2,6 +2,8 @@
 
 import {create} from "zustand";
 import {useEffect} from "react";
+import {useTonConnect} from "@/hooks/useTonConnect";
+import {Address} from "ton-core";
 
 export type TokenBalance = {
   amount: number
@@ -124,10 +126,14 @@ export default function useScore() {
 
   const {data, isLoading, setData, setIsLoading} = useScoreStore()
 
+  const {wallet} = useTonConnect()
+
   const getScore = async () => {
     setIsLoading(true)
 
-    const address = 'UQDzpnrA950ulRLRyfX0cMbmmM-dN4ZN_8mzPhcF_WuAljMk'
+    if(!wallet) return
+
+    const address = Address.parseRaw(wallet).toRawString()
 
     const params: Record<string, string> = {
       scoreType: '0',

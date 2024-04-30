@@ -17,7 +17,7 @@ export function Score() {
   useEffect(() => {
     if (scoreData) return
     getScore()
-  }, [])
+  }, [wallet])
 
   if (!connected) return <></>
 
