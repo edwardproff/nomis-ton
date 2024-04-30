@@ -109,6 +109,7 @@ export type ScoreData = {
 type ScoreState = {
   data: ScoreData | null
   isLoading: boolean
+  setData: (data: ScoreData) => void
   setIsLoading: (data: boolean) => void
 }
 

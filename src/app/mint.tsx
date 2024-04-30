@@ -14,6 +14,7 @@ export function Mint() {
   const mint = async () => {
 
     if (!wallet) return
+    if(!contract) return
 
     const validatorSeed = 'wild kite chest again dad crowd loan mansion hand foot dizzy hair canoe glue antique employ kite next include tank universe blanket charge bench'
     const seqno = await contract.getSeqno();

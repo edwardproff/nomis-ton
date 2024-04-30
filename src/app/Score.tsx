@@ -78,14 +78,14 @@ export function Score() {
         </div>
       </div>
 
-      <div className={styles.badge}>
-        {Math.round(scoreData?.score * 100)}
-      </div>
+      {scoreData?.score && <div className={styles.badge}>
+        {Math.round(scoreData.score * 100)}
+      </div>}
 
     </div>
 
     <Stats/>
 
-    <Mint />
+    <Mint/>
   </div>
 }
