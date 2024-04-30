@@ -130,7 +130,9 @@ export default function useScore() {
 
     if(!wallet) return
 
-    const address = Address.parseRaw(wallet).toRawString()
+    // const address = Address.parseRaw(wallet).toRawString()
+    //
+    const address = '0QDzpnrA950ulRLRyfX0cMbmmM-dN4ZN_8mzPhcF_WuAloiu'
 
     const params: Record<string, string> = {
       scoreType: '0',

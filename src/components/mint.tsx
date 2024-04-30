@@ -9,6 +9,26 @@ import {UserScoreProxy} from "../contracts/tact_UserScoreProxy";
 import {useTonClient} from "../hooks/useTonClient";
 import {ScoreItem} from "../contracts/tact_ScoreItem";
 import {useEffect, useState} from "react";
+import {create} from "zustand";
+
+type ScoreState = {
+  data: number
+  isLoading: boolean
+  isMinted: boolean
+  setData: (data: number) => void
+  setIsLoading: (data: boolean) => void
+  setIsMinted: (data: boolean) => void
+}
+
+export const useTokenStore = create<ScoreState>(set => ({
+  data: 0,
+  isLoading: false,
+  isMinted: false,
+  setData: data => set({data}),
+  setIsLoading: isLoading => set({isLoading}),
+  setIsMinted: isMinted => set({isMinted}),
+}))
+
 
 export function Mint() {
   const {wallet, network, sender} = useTonConnect()
@@ -17,14 +37,18 @@ export function Mint() {
 
   const {client} = useTonClient()
 
-  const [mintedScore, setMintedScore] = useState(0)
+  const {isLoading, isMinted, setIsMinted, setIsLoading, setData, data: mintedScore} = useTokenStore()
 
   useEffect(() => {
     getToken()
   }, [])
 
+  useEffect(() => {
+    getToken()
+  }, [client, wallet, contract])
+
   const getToken = async () => {
-    if(!client) return
+    if (!client) return
     if (!contract) return
     if (!wallet) return
 
@@ -35,7 +59,8 @@ export function Mint() {
     const itemAddress = await contract.getGetNftAddressByIndex(itemIndex)
     const itemContract = client.open(ScoreItem.fromAddress(itemAddress) as Contract) as OpenedContract<ScoreItem>
     const itemScore = await itemContract.getScore()
-    setMintedScore(Number(itemScore))
+    console.log(await itemContract.getGetNftData())
+    setData(Number(itemScore))
     console.log(itemScore)
   }
 
@@ -44,6 +69,8 @@ export function Mint() {
     if (!contract) return
 
     if (!scoreData?.mintData?.mintedScore) return
+
+    setIsLoading(true)
 
     // get score
     const validatorSeed = 'wild kite chest again dad crowd loan mansion hand foot dizzy hair canoe glue antique employ kite next include tank universe blanket charge bench'
@@ -88,12 +115,18 @@ export function Mint() {
         score_data: data,
       }
     );
+
+    setTimeout(() => {
+      setIsMinted(true)
+      setIsLoading(false)
+      setData(Number(score))
+    }, 10000)
   }
 
   return <>
     <div>
       <button onClick={mint} className={styles.button}>
-        {mintedScore ? 'Mint' : 'Update'}
+        {mintedScore ? 'Update' : 'Mint'}
       </button>
     </div>
   </>

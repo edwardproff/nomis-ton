@@ -13,9 +13,9 @@ function App() {
       <main>
         <Connect/>
         <Score/>
-        <div>
-          <TonConnectButton/>
-        </div>
+        {/*<div>*/}
+        {/*  <TonConnectButton/>*/}
+        {/*</div>*/}
       </main>
     </main>
   );

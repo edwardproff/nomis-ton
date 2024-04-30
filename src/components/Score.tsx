@@ -3,12 +3,13 @@ import useScore from "../hooks/useScore";
 import {useTonConnect} from "../hooks/useTonConnect";
 import {Stats} from "./Stats";
 import {useEffect} from "react";
-import {Mint} from "./mint";
+import {Mint, useTokenStore} from "./mint";
 
 export function Score() {
 
   const {connected, wallet} = useTonConnect()
   const {scoreData, isLoading, getScore} = useScore()
+  const {data: mintedScore, isLoading: minting} = useTokenStore()
 
   useEffect(() => {
     if (scoreData) return
@@ -23,6 +24,20 @@ export function Score() {
 
       <div className={styles.title}>
         We are calculating your Score
+      </div>
+
+      <div className={styles.description}>
+        Loading...
+      </div>
+    </div>
+  </>
+
+  if (minting) return <>
+    <div className={styles.loading}>
+      <img src="/minting.png" className={styles.yoda}/>
+
+      <div className={styles.title}>
+        Your transaction is pending
       </div>
 
       <div className={styles.description}>
@@ -81,6 +96,13 @@ export function Score() {
     </div>
 
     {scoreData?.mintData ? <>
+
+      {!!mintedScore && <div className={styles.success}>
+          <div className={styles.title}>
+              Minted and up to date
+          </div>
+      </div>}
+
       <Stats/>
       <Mint/>
     </> : <div className={styles.banner}>
